@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" href="assets/favicon2.png" type="image/x-icon">
+
+     
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+     
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Unica+One&display=swap" rel="stylesheet">
+
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+     
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+
+<script>
+  document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetID = this.getAttribute('href');
+      const targetElement = document.querySelector(targetID);
+
+      if (targetElement) {
+        const headerOffset = 70; // height of your navbar in px
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      // Close mobile menu if open
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarToggler.offsetParent !== null && navbarCollapse.classList.contains('show')) {
+        navbarToggler.click();
+      }
+    });
+  });
+</script>
+
+
+
+<body>
+
+     
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="assets/favicon.png" alt="Logo" class="logo-img"> 
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Toggle navigation">
+                <div class="toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#service">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+     
+    <section id="home" class="hero-section">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videoplayback.webm" type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="row">
+                <img src="images/homepage.png" class="homeimg">
+            </div>
+        </div>
+    </section>
+
+     
+    <section id="about" class="about-section">
+         <video id="aboutbg-video" autoplay muted playsinline preload="auto">
+            <!-- JS will insert the correct <source> here -->
+        </video>
+    </section>
+
+     
+    <section id="projects" class="projects-section">
+    
+    <div class="mobile-projects mobile-only">
+
+      <!-- Blurred background -->
+      <div class="blur-bg">
+        <div class="blur-circle blue"></div>
+        <div class="blur-circle purple"></div>
+      </div>
+
+      <!-- CARD SLIDER -->
+      <div class="mobile-project-slider">
+
+        <div class="mobile-project-card active">
+          <img src="images/projects/Cover.png" class="mobile-project-image">
+          <div class="mobile-project-content">
+            <div class="role">UI / UX</div>
+            <div class="project-title"><span class="title-left">EDU</span> <span class="title-right">TRACKER</span></div>
+            <p class="project-desc">EduTracker Mobile App UI helps students track progress, manage schedules, and stay motivated.</p>
+            <a href="https://www.figma.com/design/Bg7LQZ7osjLrXzjjEVNOTK/Edu-Tracker-Mobile" target="_blank">
+              <button class="figma-btn">OPEN IN FIGMA</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="mobile-project-card">
+          <img src="images/projects/MedReachCover.png" class="mobile-project-image">
+          <div class="mobile-project-content">
+            <div class="role">Mobile App</div>
+            <div class="project-title"><span class="title-left">MED</span> <span class="title-right">REACH</span></div>
+            <p class="project-desc">MedReach is a rural telemedicine app connecting patients with health services in Sri Lanka.</p>
+            <a href="https://www.figma.com/design/JKz3cRg7MjE8fzZOFTlFBC/MedReach" target="_blank">
+              <button class="figma-btn">OPEN IN FIGMA</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Add more .mobile-project-card elements as needed -->
+
+      </div>
+
+      <!-- Arrows -->
+      <div class="mobile-arrows">
+        <button class="mobile-arrow" id="mobile-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="mobile-arrow" id="mobile-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="images/projects/Cover.png">
+                <div class="content">
+                    <div class="author">UI / UX</div>
+                    <div class="title">EDU</div>
+                    <div class="topic">TRACKER</div>
+                    <div class="des">
+                        EduTracker Mobile App UI is a sleek and user-centric design crafted <br>to help students efficiently track their academic progress, manage <br>schedules, and stay motivated. The interface focuses on simplicity, <br>clarity, and ease of use, providing an engaging experience for users<br> to monitor their results, upcoming exams, and deadlines all in <br>one place.    
+                    </div>
+                    <div class="buttons">
+                        <a href="https://www.figma.com/design/Bg7LQZ7osjLrXzjjEVNOTK/Edu-Tracker-Mobile?m=auto&t=dzPQqxQ2Or6SBsCA-1"><button>OPEN IN FIGMA</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/projects/MedReachCover.png">
+                <div class="content">
+                    <div class="author" style="color: white;">Mobile Application</div>
+                    <div class="title" style="color: #66FFE5;">MED</div>
+                    <div class="topic" style="color: #b5fff3;">REACH</div>
+                    <div class="des" style="color: white;">
+                        MedReach is a rural telemedicine mobile app designed to
+                        <br>
+                        connect patients in underserved areas of Sri Lanka with <br>doctors, pharmacists, and health services through a<br> simple, Android-based platform. <br>Powered by Flutter and Firebase, it ensures accessible,<br>  secure, and real-time healthcare anytime, anywhere. 
+                    </div>
+                    <div class="buttons">
+                        <a href="https://www.figma.com/design/JKz3cRg7MjE8fzZOFTlFBC/MedReach?m=auto&t=YUHy25HTpro1CEEw-6"><button>OPEN IN FIGMA</button></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail" >
+            <div class="item">
+                <img src="images/projects/Cover.png" style="filter: brightness(60%);">
+                <div class="content" style="color: #66FFE5; ">
+                    <div class="title">
+                        EduTracker
+                    </div>
+                    <div class="description">
+                        UI / UX design
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/projects/MedReachCover.png" style="filter: brightness(60%);" >
+                <div class="content">
+                    <div class="title">
+                        MedReach
+                    </div>
+                    <div class="description">
+                        UI / UX design
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+          <button id="prev" style="color: rgb(0, 0, 0);"><i class="fas fa-chevron-left"></i></button>
+          <button id="next" style="color: rgb(0, 0, 0);"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+    </section>
+
+    <section id="service">
+    <!--service-heading--------------->
+        <div class="service-heading">
+          <h3>WHAT I DO</h3>
+        </div>
+  
+  
+        <!--container---------------->
+        <div class="service-container">
+  
+          <!--box-1------------->
+          <div class="service-box">
+  
+            <!--img---->
+            <div class="service-img">
+              <img alt="service" src="images/services/services2.png">
+            </div>
+            <!--text--->
+            <div class="service-text">
+               
+              <a class="service-title" href="#"> UI/UX Design</a>
+              <p>Design isn't just how it looks — it's how it works. I craft clean, user-focused interfaces that feel natural to use across all screen sizes.</p>
+            </div>
+  
+          </div>
+
+          <!--box-1------------->
+          <div class="service-box">
+  
+            <!--img---->
+            <div class="service-img">
+              <img alt="service" src="images/services/services1.png">
+            </div>
+            <!--text--->
+            <div class="service-text">
+               
+              <a class="service-title" href="#">Web Development</a>
+              <p>I turn ideas into interactive, functional websites using modern tools and best practices — optimized for speed, style, and usability.</p>
+            </div>
+  
+          </div>
+
+          <!--box-1------------->
+          <div class="service-box">
+  
+            <!--img---->
+            <div class="service-img">
+              <img alt="service" src="images/services/services3.png">
+            </div>
+            <!--text--->
+            <div class="service-text">
+               
+              <a class="service-title" href="#">Mobile App Development</a>
+              <p>I create elegant, high-performance mobile applications designed for seamless and intuitive user experiences.</p>
+            </div>
+  
+          </div>
+  
+  
+  
+  
+
+  
+        </div>
+  
+      </section>
+
+     
+    <section id="contact" class="contact-section">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videoplayback.webm" type="video/mp4">
+        </video>
+        <div class="contactinfo">
+            <div class="contact-title">CONTACT ME VIA</div>
+            <div class="contact-links">
+                <a href="https://www.behance.net/eshannethmina">
+                    <div class="contact-card">
+                        <img src="assets/behancelogo.png" class="contactlogo">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/prodby.sandev/">
+                    <div class="contact-card">
+                        <img src="assets/iglogo.png" class="contactlogo">
+                    </div>
+                </a>
+                <a href="https://lk.linkedin.com/in/eshan-nethmina-322b45300">
+                    <div class="contact-card">
+                        <img src="assets/linkedinlogo.png" class="contactlogo">
+                    </div>
+                </a>
+                <a href="mailto:eshannethmina51@gmail.com">
+                    <div class="contact-card">
+                        <img src="assets/maillogo.png" class="contactlogo">
+                    </div>
+                </a>
+                <a href="https://wa.me/94774338885" target="_blank">
+                    <div class="contact-card">
+                        <img src="assets/whatsapplogo.png" class="contactlogo">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+     
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            const isDesktop = window.innerWidth > 768;
+
+            if (isDesktop && window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+            } else {
+            navbar.classList.remove('scrolled');
+            }
+        });
+
+
+        window.addEventListener('resize', function () {
+            const navbar = document.getElementById('navbar');
+            if (window.innerWidth <= 768) {
+            navbar.classList.remove('scrolled');
+            }
+        });
+
+         document.querySelectorAll('.navbar-collapse .nav-link').forEach(function(navLink) {
+            navLink.addEventListener('click', function () {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            if (navbarToggler.offsetParent !== null) {
+                navbarToggler.click();
+            }
+            });
+        });
+    </script>
+
+<script>
+  const togglerButton = document.querySelector('.custom-toggler');
+  const navbarCollapse = document.getElementById('navbarNav');
+
+  togglerButton.addEventListener('click', () => {
+    togglerButton.classList.toggle('active');
+  });
+
+
+  document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768 && navbarCollapse.classList.contains('show')) {
+        togglerButton.click(); 
+      }
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('aboutbg-video');
+    const source = document.createElement('source');
+
+    // Choose the source based on screen width
+    if (window.innerWidth <= 768) {
+      source.src = 'assets/aboutmobile.mp4';
+    } else {
+      source.src = 'assets/aboutdesktop.mp4';
+    }
+
+    source.type = 'video/mp4';
+    video.appendChild(source);
+
+    // Force reload and play
+    video.load();
+    video.play();
+  });
+</script>
+
+<script>
+  const aboutSection = document.getElementById('about');
+  const video = document.getElementById('aboutbg-video');
+  const source = document.createElement('source');
+  const freezeTime = 5; // seconds to freeze at
+
+  // Load correct video based on screen width
+  if (window.innerWidth <= 768) {
+    source.src = 'assets/about-mobile.mp4';
+  } else {
+    source.src = 'assets/about-desktop.mp4';
+  }
+
+  source.type = 'video/mp4';
+  video.appendChild(source);
+  video.load();
+
+  let stopTimeout;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.currentTime = 0;
+        video.play();
+
+        clearTimeout(stopTimeout);
+        stopTimeout = setTimeout(() => {
+          video.pause();
+          video.currentTime = freezeTime;
+        }, freezeTime * 1000);
+
+      } else {
+        clearTimeout(stopTimeout);
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
+
+  observer.observe(aboutSection);
+</script>
+
+<script>
+    const cards = document.querySelectorAll('.mobile-project-card');
+  const prevBtn = document.getElementById('mobile-prev');
+  const nextBtn = document.getElementById('mobile-next');
+  let currentIndex = 0;
+
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      card.classList.remove('active');
+      if (i === index) card.classList.add('active');
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showCard(currentIndex);
+  });
+</script>
+
+<script>
+  const cards = document.querySelectorAll('.mobile-project-card');
+  const prevBtn = document.getElementById('mobile-prev');
+  const nextBtn = document.getElementById('mobile-next');
+  let currentIndex = 0;
+
+  function showCard(index, direction) {
+    if (index === currentIndex) return;
+
+    const currentCard = cards[currentIndex];
+    const nextCard = cards[index];
+
+    // Remove active from all
+    cards.forEach(card => card.classList.remove('active', 'slide-in-right', 'slide-in-left', 'slide-out-left', 'slide-out-right'));
+
+    // Animate current card out
+    if (direction === 'next') {
+      currentCard.classList.add('slide-out-left');
+      nextCard.classList.add('slide-in-right');
+    } else {
+      currentCard.classList.add('slide-out-right');
+      nextCard.classList.add('slide-in-left');
+    }
+
+    // Make next card active after slight delay
+    setTimeout(() => {
+      currentCard.classList.remove('active');
+      nextCard.classList.add('active');
+    }, 10); // apply animation immediately
+
+    currentIndex = index;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const nextIndex = (currentIndex + 1) % cards.length;
+    showCard(nextIndex, 'next');
+  });
+
+  prevBtn.addEventListener('click', () => {
+    const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showCard(prevIndex, 'prev');
+  });
+</script>
+
+</body>
+</html>
