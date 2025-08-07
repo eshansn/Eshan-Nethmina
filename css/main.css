@@ -1347,3 +1347,11 @@ body {
     right: -100px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .site-wrapper {
+    transform: scale(0.95);
+    transform-origin: top center;
+  }
+}
+
