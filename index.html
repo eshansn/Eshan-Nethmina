@@ -464,12 +464,6 @@
   const nextBtn = document.getElementById('mobile-next');
   let currentIndex = 0;
 
-  function showCard(index) {
-    cards.forEach((card, i) => {
-      card.classList.remove('active');
-      if (i === index) card.classList.add('active');
-    });
-  }
 
   nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % cards.length;
@@ -525,6 +519,7 @@
 
 </body>
 </html>
+
 
 
 
