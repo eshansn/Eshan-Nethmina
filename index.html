@@ -468,15 +468,8 @@
     currentIndex = (currentIndex - 1 + cards.length) % cards.length;
     showCard(currentIndex);
   });
-</script>
 
-<script>
-  const cards = document.querySelectorAll('.mobile-project-card');
-  const prevBtn = document.getElementById('mobile-prev');
-  const nextBtn = document.getElementById('mobile-next');
-  let currentIndex = 0;
-
-  function showCard(index, direction) {
+    function showCard(index, direction) {
     if (index === currentIndex) return;
 
     const currentCard = cards[currentIndex];
@@ -513,8 +506,3 @@
     showCard(prevIndex, 'prev');
   });
 </script>
-
-</body>
-</html>
-
-
