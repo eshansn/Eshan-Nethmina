@@ -459,32 +459,29 @@
 </script>
 
 <script>
-    const cards = document.querySelectorAll('.mobile-project-card');
+  const cards = document.querySelectorAll('.mobile-project-card');
   const prevBtn = document.getElementById('mobile-prev');
   const nextBtn = document.getElementById('mobile-next');
   let currentIndex = 0;
 
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    showCard(currentIndex);
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    showCard(currentIndex);
-  });
-
-    function showCard(index, direction) {
+  function showCard(index, direction) {
     if (index === currentIndex) return;
 
     const currentCard = cards[currentIndex];
     const nextCard = cards[index];
 
-    // Remove active from all
-    cards.forEach(card => card.classList.remove('active', 'slide-in-right', 'slide-in-left', 'slide-out-left', 'slide-out-right'));
+    // Remove animation classes from all
+    cards.forEach(card => {
+      card.classList.remove(
+        'active',
+        'slide-in-right',
+        'slide-in-left',
+        'slide-out-left',
+        'slide-out-right'
+      );
+    });
 
-    // Animate current card out
+    // Animate current card out & next card in
     if (direction === 'next') {
       currentCard.classList.add('slide-out-left');
       nextCard.classList.add('slide-in-right');
@@ -493,32 +490,34 @@
       nextCard.classList.add('slide-in-left');
     }
 
-    // Make next card active after slight delay
+    // Set active after short delay to allow animation
     setTimeout(() => {
-      currentCard.classList.remove('active');
       nextCard.classList.add('active');
-    }, 10); // apply animation immediately
+    }, 10);
 
     currentIndex = index;
   }
 
+  // Next button click
   nextBtn.addEventListener('click', () => {
     const nextIndex = (currentIndex + 1) % cards.length;
     showCard(nextIndex, 'next');
   });
 
+  // Previous button click
   prevBtn.addEventListener('click', () => {
     const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
     showCard(prevIndex, 'prev');
   });
+
+  // Initial state
+  cards[currentIndex].classList.add('active');
 </script>
-
-
-
 
 
 </body>
 </html>
+
 
 
 
