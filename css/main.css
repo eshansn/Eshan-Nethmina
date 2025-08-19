@@ -831,9 +831,8 @@ body {
   background-color: #000000;
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  height: 100vh;
   color: white;
-  padding-top: 70px;
   padding: 0; 
   margin: 0; 
   position: relative; 
@@ -1355,8 +1354,5 @@ body {
     transform-origin: top center;
   }
 }
-
-
-
 
 
